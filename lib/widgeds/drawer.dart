@@ -10,7 +10,7 @@ class Mydrawer extends StatelessWidget {
     final imageUrl="https://picfiles.alphacoders.com/176/thumb-1920-176163.png";
     return Drawer(
       child: Container(
-        color: Color.fromARGB(255, 121, 133, 154),
+        color: Color.fromARGB(254, 91, 5, 5),
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -18,7 +18,7 @@ class Mydrawer extends StatelessWidget {
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                decoration: BoxDecoration(color: Color.fromARGB(240, 16, 2, 92)),
+                decoration: BoxDecoration(color: Color.fromARGB(239, 16, 9, 54)),
                 accountName: Text("Shakti Maddeshiya",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                 accountEmail: Text("shaktimaddeshiya184@gmail.com",style: TextStyle(color: Colors.white),),
                 currentAccountPicture: CircleAvatar(backgroundImage: NetworkImage(imageUrl),

@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Catalog App"),
       ),
-      backgroundColor: Color.fromARGB(255, 197, 206, 221),
+      backgroundColor: Color.fromARGB(255, 251, 252, 252),
           body: Center(
             child: Container(
               //color: Color.fromARGB(255, 121, 133, 154),
