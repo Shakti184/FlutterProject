@@ -36,13 +36,44 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: (catalogModel.items!=null && catalogModel.items.isNotEmpty)? ListView.builder(
-          itemCount: catalogModel.items.length,
+        child: (catalogModel.items!=null && catalogModel.items.isNotEmpty)? GridView.builder(
+          gridDelegate: 
+          SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 16,
+            crossAxisSpacing: 16,
+            ),
           itemBuilder: (context,index){
-            return Itemwidget(
-              item: catalogModel.items[index] ,
+            final item = catalogModel.items[index];
+            return Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              child: GridTile(
+                header: Container(
+                  child: Text(
+                    item.name,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 65, 36, 116),
+                  ),
+                  ),
+                child: Image.network(item.image),
+                footer: Container(
+                  child: Text(
+                    item.price.toString(),
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 45, 35, 61),
+                  ),
+                  ),
+              ),
             );
-          }
+          },
+          itemCount: catalogModel.items.length,
           )
           :Center(
             child: CircularProgressIndicator(),
